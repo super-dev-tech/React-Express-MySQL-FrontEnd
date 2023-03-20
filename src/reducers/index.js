@@ -1,6 +1,10 @@
-import { combineReducers } from "redux";
-import tutorials from "./tutorials";
+import { combineReducers } from "redux"
+import auth from "./auth"
+import message from "./message"
+import tutorials from "./tutorials"
 
 export default combineReducers({
-  tutorials,
-});
+	tutorials,
+	auth,
+	message,
+})
