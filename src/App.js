@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
@@ -38,6 +39,7 @@ class App extends Component {
 
 	componentDidMount() {
 		const user = this.props.user
+		console.log("user", user)
 
 		if (user) {
 			this.setState({
@@ -178,4 +180,11 @@ class App extends Component {
 	}
 }
 
-export default App
+function mapStateToProps(state) {
+	const { user } = state.auth
+	return {
+		user,
+	}
+}
+
+export default connect(mapStateToProps)(App)
